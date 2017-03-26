@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        main {
+          width: 460px;
+          margin: 20px auto;
+          padding: 30px;
+            background-color: lightblue;
+        }
+        textarea {
+            width: 97%;
+            height: 150px;
+            padding: 10px;
+            border-radius: 5px;
+            resize: none;
+        }
+        #blog {
+            background-color: gray;
+            padding: 10px;
+        }
+        #blog p {
+            background-color:  lightgray;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        button {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main> 
+        <textarea id="message" cols="60" rows="10"></textarea>
+        <button onclick="blog()">написать</button>
+        <div id="blog"></div>
+    </main>
+    <script>
+        "use strict";
+        function blog() {
+            var text_imput = document.getElementById('message').value,
+                blog       = document.getElementById('blog');
+            
+            if (message !=''){
+            
+            blog.innerHTML = '<p>' + text_imput + '</p>' + blog.innerHTML;    
+            document.getElementById('message').value = '';
+            };
+            }
+            document.body.onkeypress = function (e) {
+                  if (e.keyCode == 13) {
+                  blog();      
+            }
+            }
+             
+    </script>
+</body>
+</html>
