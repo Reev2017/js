@@ -11,10 +11,14 @@
     <h3 id="result"></h3>
     <script>
         function hyp () {
-            var side_a = document.getElementById('side_a').value,
-                side_b = document.getElementById('side_b').value,
+            var side_a = document.getElementById('side_a'),
+                     a = side_a.value,
+                side_b = document.getElementById('side_b'),
+                     b = side_b.value,
                 result = document.getElementById('result');
-            result.innerHTML = Math.sqrt(side_a*side_a+side_b*side_b);
+            
+            var c = Math.sqrt(a*a+b*b);
+            result.innerHTML = c;
         };
         
     </script>
