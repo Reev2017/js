@@ -10,25 +10,44 @@
     <button onclick="hyp()">рассчет</button>
     <h3 id="result"></h3>
     <script>
-        function hyp () {
+       /* function hyp () {
             var side_a = document.getElementById('side_a'),
                      a =side_a.value;
-                if  (a >0 && !isNaN(a)){
+                if  (a >0 && !isNaN(a) && a !=''){
                     var side_b = document.getElementById('side_b'),
                         b = side_b.value;
-                        if (b >0 && !isNaN(b)) {
+                        if (b >0 && !isNaN(b) && b !='') {
                              var c = Math.sqrt(a*a+b*b);
                              result.innerHTML = 'результат = ' + c;
                         }
                         else {
-                        alert('ошибка')
+                        result.innerHTML = ('Ошибка');
                         }
                 }
                 else {
-                    alert ('ошибка')
+                    result.innerHTML = ('Ошибка');
                 }
         };
-        
+        */
+    </script>
+    <script>
+        function hyp () {
+            var side_a = document.getElementById('side_a'),
+                     a =side_a.value,
+                side_b = document.getElementById('side_b'),
+                     b = side_b.value,
+                result = document.getElementById('result');
+                if  (a=='' || a<=0 || isNaN(a)); {
+                    result.innerHTML = 'ошибка а';
+                }
+                else if (b='' || b<=0 || isNaN(b)); {
+                     result.innerHTML = 'ошибка b';
+                }
+                else {
+                    var c =Math.sqrt(a*a+b+b);
+                    result.innerHTML = 'Результат ' + c;
+                }
+        }
     </script>
 </body>
 </html>
